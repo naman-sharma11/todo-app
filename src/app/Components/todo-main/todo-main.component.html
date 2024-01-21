@@ -1,0 +1,13 @@
+<app-todo-add (todoAdd)="addTodo($event)"></app-todo-add>
+<div class="container">
+    <div class="row justify-content-evenly ">
+        <div class="col-4 columns">
+            <div class="text-center columnNames">To Do's pending</div>
+            <app-todo-show [todos]="todos" [todoActive]="true" (todoDelete)="todoDelete($event);" (todoDone)="todoDone($event);"></app-todo-show>
+        </div>
+        <div class="col-4 columns">
+            <div class="text-center columnNames">To Do's done</div>
+            <app-todo-show [todos]="todos" [todoActive]="false" (todoDelete)="todoDelete($event);" (todoDone)="todoDone($event);"></app-todo-show>
+        </div>
+    </div>
+</div>

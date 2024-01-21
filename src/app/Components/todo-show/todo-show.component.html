@@ -1,0 +1,27 @@
+<div class="accordion accordion-flush" id="accordionFlushExample">
+    <div *ngFor="let todo of todos; index as ind">
+        <div *ngIf="this.todo.isActive == todoActive">
+            <div class="accordion-item ">
+                <h2 class="accordion-header btn2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        attr.data-bs-target="#flush-collapseOne{{ind}}" aria-expanded="false"
+                        attr.aria-controls="flush-collapseOne{{ind}}">
+                        {{ todo.title }}
+                    </button>
+                </h2>
+                <div id="flush-collapseOne{{ind}}" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">{{ todo.desc }}
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end customBtn">
+                        <div *ngIf="todoActive == true; else elseBlock"><button class="btn btn-sm btn-primary me-md-2"
+                                type="button" (click)="onDone(todo);">Done</button></div>
+                        <ng-template #elseBlock><button class="btn btn-sm btn-primary me-md-2"
+                                type="button" (click)="onDone(todo);">Undone</button></ng-template>
+                        <button class="btn btn-sm btn-primary" type="button" (click)="onDelete(todo);">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

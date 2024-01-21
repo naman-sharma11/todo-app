@@ -1,0 +1,14 @@
+/* .btn1 {
+    border-bottom: 1px solid black;
+} */
+
+.btn2 {
+    border: 1px solid black;
+}
+
+.customBtn {
+    --bs-btn-padding-y: .25rem; 
+    --bs-btn-padding-x: .5rem; 
+    --bs-btn-font-size: .75rem;
+    margin-bottom: 10px;
+}

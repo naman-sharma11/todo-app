@@ -1,0 +1,9 @@
+.columns {
+    border: 2px solid black;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.columnNames {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,35 @@
+<div class="container text-center">
+    <div class="row justify-content-evenly">
+        <div class="col-4 columns">
+            <div id="columnNames">To Do's pending</div>
+            <app-todo-show></app-todo-show>
+
+        </div>
+        <div class="col-4 columns">
+            <div id="columnNames">To Do's done</div>
+
+        </div>
+    </div>
+</div>
+<div class="accordion accordion-flush" id="accordionFlushExample">
+    <div *ngFor="let todo of todos; index as ind">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    attr.data-bs-target="#flush-collapseOne{{ind}}" aria-expanded="false"
+                    attr.aria-controls="flush-collapseOne{{ind}}">
+                    {{ todo.title }}
+                </button>
+            </h2>
+            <div id="flush-collapseOne{{ind}}" class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">{{ todo.desc }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
